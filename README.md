@@ -145,15 +145,15 @@ hello world
  
 grep Hello newfile 
 ## OUTPUT
-
-
-
+```
+hello world
+```
 grep hello newfile 
 ## OUTPUT
+```
+Hello world
 
-
-
-
+```
 grep -v hello newfile 
 ## OUTPUT
 
