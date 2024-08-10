@@ -42,28 +42,57 @@ s.n. dasgupta
 ### Display the content of the files
 cat < file1
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/8c990d14-2eca-4b8b-8037-b5613bc92cb6)
+```
+chanchal singhvi
+c.k. shukla
+s.n. dasgupta
+sumit chakrobarty
 
+```
 cat < file2
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/4ced78ed-14b8-4851-b1f0-4f6c87ad5783)
-
+```
+anil aggarwal
+barun sengupta
+c.k. shukla
+lalit chowdury
+s.n. dasgupta
+```
 
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
- ![image](https://github.com/user-attachments/assets/6271f739-915b-486e-9c76-a98f99c6d593)
-
+```
+file1 file2 differ: byte 1, line 1
+```
 comm file1 file2
  ## OUTPUT
-![image](https://github.com/user-attachments/assets/28ac3bff-dcc5-4239-ac4a-5eed4e191c74)
+ ```
+anil aggarwal
+	barun sengupta
+chanchal singhvi
+		c.k. shukla
+	lalit chowdury
+		s.n. dasgupta
+sumit chakrobarty
 
+```
  
 diff file1 file2
 ## OUTPUT
-
-![image](https://github.com/user-attachments/assets/c048a2a8-55b7-4ff8-9005-8b790d87e0c4)
-
+```
+1c1,2
+< chanchal singhvi
+---
+> anil aggarwal
+> barun sengupta
+3,4c4,5
+< s.n. dasgupta
+< sumit chakrobarty
+---
+> lalit chowdury
+> s.n. dasgupta
+```
 #Filters
 
 ### Create the following files file11, file22 as follows:
@@ -85,19 +114,25 @@ cat > file22
 
 cut -c1-3 file11
 ## OUTPUT
+```
+Hel
+Thi
 
-
-
-
+```
 cut -d "|" -f 1 file22
 ## OUTPUT
-
-
-
+```
+1001 
+1002 
+1003 
+```
 cut -d "|" -f 2 file22
 ## OUTPUT
-
-
+```
+ Ram 
+ tom 
+ Joe 
+```
 cat < newfile 
 ```
 Hello world
