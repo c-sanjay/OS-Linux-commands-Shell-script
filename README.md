@@ -156,29 +156,50 @@ Hello world
 ```
 grep -v hello newfile 
 ## OUTPUT
+```
+Hello world
 
-
-
+```
 cat newfile | grep -i "hello"
 ## OUTPUT
-
-
-
-
+```
+Hello world
+hello world
+```
 cat newfile | grep -i -c "hello"
 ## OUTPUT
-
-
-
-
+```
+2
+```
 grep -R ubuntu /etc
 ## OUTPUT
 
+```
+/etc/apparmor.d/abstractions/ubuntu-email:# Users of this abstraction need to include the ubuntu-helpers abstraction
+/etc/apparmor.d/abstractions/ubuntu-email:#   include <abstractions/ubuntu-helpers>
+/etc/apparmor.d/abstractions/ubuntu-email:  include if exists <abstractions/ubuntu-email.d>
+/etc/apparmor.d/abstractions/ubuntu-feed-readers:# Users of this abstraction need to include the ubuntu-helpers abstraction
+/etc/apparmor.d/abstractions/ubuntu-feed-readers:#   include <abstractions/ubuntu-helpers>
+/etc/apparmor.d/abstractions/ubuntu-feed-readers:  include if exists <abstractions/ubuntu-feed-readers.d>
+/etc/apparmor.d/abstractions/ubuntu-bittorrent-clients:# Users of this abstraction need to include the ubuntu-helpers abstraction
+/etc/apparmor.d/abstractions/ubuntu-bittorrent-clients:#   include <abstractions/ubuntu-helpers>
+/etc/apparmor.d/abstractions/ubuntu-bittorrent-clients:  include if exists <abstractions/ubuntu-bittorrent-clients.d>
+/etc/apparmor.d/abstractions/ubuntu-xterm:  include if exists <abstractions/ubuntu-xterm.d>
+/etc/apparmor.d/abstractions/ubuntu-browsers:# Users of this abstraction need to include the ubuntu-helpers abstraction
+/etc/apparmor.d/abstractions/ubuntu-browsers:#   include <abstractions/ubuntu-helpers>
+/etc/apparmor.d/abstractions/gvfs-open:#   # needed for ubuntu-* abstractions
+/etc/apparmor.d/abstractions/gvfs-open:#   include <abstractions/ubuntu-helpers>
+/etc/apparmor.d/abstractions/gvfs-open:#   include <abstractions/ubuntu-browsers>
+/etc/apparmor.d/abstractions/gvfs-open:#   include <abstractions/ubuntu-email>
 
+```
 
 grep -w -n world newfile   
 ## OUTPUT
-
+```
+1:Hello world
+2:hello world
+```
 
 cat < newfile 
 ```
@@ -201,25 +222,29 @@ Linux is best in this World
  ```
 egrep -w 'Hello|hello' newfile 
 ## OUTPUT
+```
+Hello world
+hello world
 
-
-
+```
 egrep -w '(H|h)ello' newfile 
 ## OUTPUT
-
-
-
+```
+Hello world
+hello world
+```
 egrep -w '(H|h)ell[a-z]' newfile 
 ## OUTPUT
-
-
-
-
+```
+Hello world
+hello world
+```
 egrep '(^hello)' newfile 
 ## OUTPUT
+```
+hello world
 
-
-
+```
 egrep '(world$)' newfile 
 ## OUTPUT
 
