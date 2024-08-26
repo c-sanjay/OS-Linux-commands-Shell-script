@@ -1,3 +1,5 @@
+# NAME : SANJAY C
+# REG NO : 212223240150
 # OS-Linux-commands-Shell-scripting
 Operating systems Lab exercise
 # Linux commands-Shell scripting
